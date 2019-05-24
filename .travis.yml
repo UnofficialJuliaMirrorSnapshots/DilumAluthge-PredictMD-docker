@@ -1,0 +1,77 @@
+############################################################################
+
+branches:
+    only:
+    - develop
+    - master
+    - staging
+    - trying
+    - /^release\/.*$/ # release branches
+    - /^v[0-9]+\.[0-9]+\.[0-9]+$/ # version tags
+
+env:
+    global:
+        - DOCUMENTER_DEBUG="true"
+        - DOCKER_IMAGE_OWNER="dilumaluthge"
+        - JULIA_DEBUG="all"
+        - PREDICTMD_OPEN_PLOTS_DURING_TESTS="true"
+
+git:
+    depth: 99999999
+
+language: bash
+
+matrix:
+    fast_finish: true
+
+notifications:
+    email:
+        on_failure: always
+        on_success: never
+os:
+    - linux
+
+services:
+    - docker
+
+############################################################################
+
+before_install:
+    - true
+install:
+    - true
+before_script:
+    - true
+script:
+    - true
+after_script:
+    - true
+
+############################################################################
+
+stages:
+    - "Stage 1 (latex-for-plotting)"
+    - "Stage 2 (offlineregistry)"
+    - "Stage 3 (predictmd)"
+
+############################################################################
+
+jobs:
+    include:
+        - stage: "Stage 1 (latex-for-plotting)"
+          name: "dilumaluthge/latex-for-plotting"
+          env:
+              - IMAGE="latex-for-plotting"
+          script: ./ci/travis/script.sh
+        - stage: "Stage 2 (offlineregistry)"
+          name: "dilumaluthge/offlineregistry"
+          env:
+              - IMAGE="offlineregistry"
+          script: ./ci/travis/script.sh
+        - stage: "Stage 3 (predictmd)"
+          name: "dilumaluthge/predictmd"
+          env:
+              - IMAGE="predictmd"
+          script: ./ci/travis/script.sh
+
+############################################################################
