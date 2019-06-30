@@ -1,7 +1,5 @@
 #!/bin/bash
 
-##### Beginning of file
-
 set -ev
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]
@@ -27,8 +25,6 @@ pwd
 cd $TRAVIS_BUILD_DIR
 pwd
 
-make docker-purge-all
-
 pwd
 cd docker
 pwd
@@ -38,7 +34,7 @@ cd $IMAGE
 pwd
 
 make build
-make test-all
+make test
 
 if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]
 then
@@ -68,7 +64,3 @@ fi
 pwd
 cd $TRAVIS_BUILD_DIR
 pwd
-
-make docker-purge-all
-
-##### End of file

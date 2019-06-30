@@ -1,16 +1,26 @@
 # PredictMD-docker: Docker and Singularity images for [PredictMD](https://predictmd.net)
 
-This repository contains scripts for creating Docker images and
-Singularity images for [PredictMD](https://predictmd.net).
+<p>
+<a href="https://doi.org/10.5281/zenodo.1291209">
+<img
+src="https://zenodo.org/badge/109460252.svg"/>
+</a>
+</p>
 
-<a href="https://www.repostatus.org/#active">
-<img src="https://www.repostatus.org/badges/latest/active.svg"
-alt="Project Status: Active – The project has reached a stable, usable
-state and is being actively developed." /></a>
-<a href="https://travis-ci.com/DilumAluthge/PredictMD-docker/branches">
+<p>
+<a
+href="https://bors.tech">
+<img
+src="https://bors.tech/images/badge_small.svg"/>
+</a> <a
+href="https://travis-ci.com/DilumAluthge/PredictMD-docker/branches">
 <img
 src="https://travis-ci.com/DilumAluthge/PredictMD-docker.svg?branch=master"/>
 </a>
+</p>
+
+This repository contains scripts for creating Docker images and
+Singularity images for [PredictMD](https://predictmd.net).
 
 ## Recommended image
 
